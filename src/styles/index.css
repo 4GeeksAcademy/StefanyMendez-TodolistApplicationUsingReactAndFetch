@@ -1,12 +1,78 @@
+body{
+    background: #F9F9F9;
+    font-family: 'Mulish', sans-serif;
+}
+.conteiner-fluid{
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+}
+h1{
+    text-align: center;
+    color: pink;
+    font-size: 7rem;
 
-/* 
+}
+.container-todos{
+    width: 60rem;
+    height: auto;
+    margin: auto;
+    position: relative;
+    background: white;
+    text-align: left;
+     
+}
+.input{
+    border: none;
+    font-size: 3rem;
+    width: auto;
+    outline: none;
+    margin: 1rem 3rem;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+ul{
+    margin:1rem 1rem;
+    font-size: 1.7rem;
+}
 
-*/
+ul :hover {
+    cursor: pointer;
+    .btnClose{
+        visibility: visible;
+    }
+}
+
+.btnClose{
+    float: right;
+    color: pink;
+    border: none;
+    background: none;
+    visibility: hidden;
+    &:hover{
+        color: rgb(233, 132, 149);
+    }
+    &:active{
+        rotate: 25deg;
+    }
+}
+
+.footer{
+    margin: 1rem;
+    font-size: 1.2rem;
+    color: lightgrey;
+}
+
+#place1{
+    position: relative;
+    background-color: white;
+    width: 59rem;
+    height: 5px;
+    margin-top: -1.4rem;
+}
+#place2{
+    position: relative;
+    background-color: white;
+    width: 58rem;
+    height: 5px;
+    margin-top: -3.4rem;  
+}
