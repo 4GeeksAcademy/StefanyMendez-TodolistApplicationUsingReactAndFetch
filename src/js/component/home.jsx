@@ -6,8 +6,10 @@ const Home = () => {
 	const [todo, setTodo] = useState("")
 	const [todos, setTodos] = useState([])
 	const [numberTasks, setTasks] = useState("No tasks, add a task")
+	
 
 	useEffect(() => {
+		
 		getTodo();
 
 	}, []);
@@ -24,6 +26,28 @@ const Home = () => {
 			alert("Please add a Task")
 		}
 	}
+	const postApi = ()=>{
+		var myHeaders = new Headers();
+		myHeaders.append("Content-Type", "application/json");
+		setTasks("No tasks, add a task")
+
+		var raw = JSON.stringify([]);
+
+		var requestOptions = {
+			method: "POST",
+			headers: myHeaders,
+			body: raw,
+			redirect: "follow"
+		};
+		fetch(
+			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			requestOptions
+		)
+			.then(response => response.json())
+			.then(result => console.log(result))
+			.catch(error => console.log("Error en postApi", error))
+	}
+
 	const deleteTodos = (id) => {
 		var myHeaders = new Headers();
 		myHeaders.append("Content-Type", "application/json");
@@ -54,6 +78,25 @@ const Home = () => {
 
 	}
 
+	const deleteAllTodos = () => {
+		setTodos([])
+		setTasks(0)
+
+		todos.length-1 === 0 ? setTasks("No tasks, add a task"):null
+
+		var requestOptions = {
+			method: "DELETE",
+		};
+
+		fetch(
+			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			requestOptions
+		)
+			.then(response =>response.json())
+			.then(result => postApi())
+			.catch(error => "Error en deleteAllTodo" + error)		
+	}
+
 	function getTodo() {
 		var requestOptions = {
 			method: "GET",
@@ -64,10 +107,15 @@ const Home = () => {
 			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
 			requestOptions
 		)
-			.then(response => response.json())
-			.then(result =>setTodos(result))
+			.then(response =>response.json())
+			.then(result =>{
+				setTodos(result)
+				setTasks(result.length)
+			})
 			.catch(error => console.log("Error en getTodo", error));	
+			
 	}
+
 	function sendTodo() {
 		var myHeaders = new Headers();
 		myHeaders.append("Content-Type", "application/json");
@@ -114,6 +162,7 @@ const Home = () => {
 				</ul>
 				<hr />
 				<label className="footer">{numberTasks + " items left"} </label>
+				<button className="btnDeleteAll" onClick={()=>deleteAllTodos()}><i className="fa-solid fa-trash-can"></i></button>
 			</div>
 			<span id="place1" className="placeholder placeholder-xs shadow"></span>
 			<br />
