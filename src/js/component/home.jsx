@@ -40,7 +40,7 @@ const Home = () => {
 			redirect: "follow"
 		};
 		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			"https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/tefis15",
 			requestOptions
 		)
 			.then(response => response.json())
@@ -69,7 +69,7 @@ const Home = () => {
 		};
 
 		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			"https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/tefis15",
 			requestOptions
 		)
 			.then(response => response.json())
@@ -89,7 +89,7 @@ const Home = () => {
 		};
 
 		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			"https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/tefis15",
 			requestOptions
 		)
 			.then(response =>response.json())
@@ -104,7 +104,7 @@ const Home = () => {
 		};
 		fetch(
 			
-			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			"https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/tefis15",
 			requestOptions
 		)
 			.then(response =>response.json())
@@ -129,7 +129,7 @@ const Home = () => {
 			redirect: "follow"
 		};
 		fetch(
-			"https://assets.breatheco.de/apis/fake/todos/user/tefis15",
+			"https://fake-todo-list-52f9a4ed80ce.herokuapp.com/todos/user/tefis15",
 			requestOptions
 		)
 			.then(response => response.json())
